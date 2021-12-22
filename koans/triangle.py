@@ -18,6 +18,15 @@
 #
 def triangle(a, b, c):
     lengths = {a, b, c}
+
+    # All sides should be greater than 0
+    if any(l <= 0 for l in lengths):
+        raise TriangleError
+
+    # The sum of any two sides should be greater than the third one
+    if a > b + c or b > a + c or c > a + b:
+        raise TriangleError
+
     if len(lengths) == 1: return 'equilateral'
     if len(lengths) == 2: return 'isosceles'
     if len(lengths) == 3: return 'scalene'
