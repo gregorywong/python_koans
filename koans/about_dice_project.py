@@ -48,8 +48,11 @@ class AboutDiceProject(Koan):
         dice.roll(5)
         second_time = dice.values
 
-        self.assertNotEqual(first_time, second_time, \
-            "Two rolls should not be equal")
+        self.assertNotEqual(
+            [ first_time, id(first_time) ],
+            [ second_time, id(second_time) ],
+            "Two rolls should not be equal"
+        )
 
         # THINK ABOUT IT:
         #
