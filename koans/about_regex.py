@@ -107,7 +107,7 @@ class AboutRegex(Koan):
         # America(sa), but not (ca) TIP you can use the pattern .a.
         # which matches in above test but in this case matches more than
         # you want
-        change_this_search_string = '[nsc]a[2-9].xls'
+        change_this_search_string = '[ns]a[1-9].xls'
         self.assertEquals(
             len(re.findall(change_this_search_string, string)),
             3)
@@ -134,7 +134,7 @@ class AboutRegex(Koan):
                 + "ca1.xls"
 
         # I want to find the name 'sam'
-        change_this_search_string = '[^nc]am'
+        change_this_search_string = '[^nc]am.xls'
         self.assertEquals(
             re.findall(change_this_search_string, string),
             ['sam.xls'])
